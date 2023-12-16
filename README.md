@@ -1,5 +1,7 @@
 # Vanity
 
+![Vanity Image](https://github.com/LaitmanX/vanity/blob/main/public/images/vanity.png)
+
 Vanity is a simple and effective tool for generating "vanity" (beautiful) addresses in Ethereum and other blockchain networks. It is designed for those who want to have a unique and memorable address.
 
 ## Introduction
