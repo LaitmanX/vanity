@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SITE } from "lib/constants";
+import { Analytics } from "@vercel/analytics/react";
 
 import "lib/globals.css";
 
@@ -18,7 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-background text-foreground">
       <ContextProvider>
-        <body>{children}</body>
+        <body>
+          {children}
+          <Analytics />
+        </body>
       </ContextProvider>
     </html>
   );
