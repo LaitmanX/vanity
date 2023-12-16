@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Vanity
 
-## Getting Started
+Vanity is a simple and effective tool for generating "vanity" (beautiful) addresses in Ethereum and other blockchain networks. It is designed for those who want to have a unique and memorable address.
 
-First, run the development server:
+## Introduction
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Vanity allows users to easily create personalized addresses by adding recognizable words or sequences of characters. It is the perfect tool for those looking to make their blockchain address stand out from the rest.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## How to Use
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Accessing Vanity
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To start using Vanity, simply visit [vanity.ac](http://vanity.ac). Our web interface allows you to effortlessly generate beautiful addresses without requiring any special technical knowledge.
 
-## Learn More
+## Features
 
-To learn more about Next.js, take a look at the following resources:
+- **Ease of Use**: An intuitive interface that makes the address generation process easy and accessible.
+- **Support for Multiple Networks**: Generates addresses for Ethereum and other popular blockchain networks.
+- **Personalization**: The ability to create addresses that contain words or symbols of your choice.
+- **Fast and Efficient**: Instant address generation without delays.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Contributing to the Project
 
-## Deploy on Vercel
+I am welcome any suggestions and participation in the project! If you have ideas or want to help in development, please do not hesitate to make changes or reach out to me.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Feedback and Support
+
+If you have questions, suggestions, or need support using Vanity, please contact me at [dim@laitman.co](mailto:dim@laitman.co).
+
+---
+
+## License
+
+Vanity is distributed under the MIT License.
