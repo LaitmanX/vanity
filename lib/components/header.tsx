@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="flex flex-col text-center text-oranges bg-black">
+    <header className="flex flex-col text-center text-oranges">
       <h1 className="text-3xl">THE FASTEST VANITY ADDRESS GENERATOR</h1>
       <p className="text-xl text-foreground">
         Unleash Style. Generate sleek vanity addresses with a modern twist and
