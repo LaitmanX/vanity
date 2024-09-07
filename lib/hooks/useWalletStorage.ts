@@ -1,27 +1,56 @@
 import { useEffect } from "react";
 import { Context } from "lib/context";
+import CryptoJS from "crypto-js";
 
+import { useAccount } from "wagmi";
 export const useWalletStorage = () => {
   const { wallets, setWallets } = Context();
-
-  const storageKey = "wallets";
-
-  useEffect(() => {
-    const savedWallets = localStorage.getItem(storageKey);
-    if (savedWallets) {
-      setWallets(JSON.parse(savedWallets));
-    }
-  }, [setWallets, storageKey]);
+  const { isConnected, address } = useAccount();
+  const storageKey = (address: string) => `wallet_${address}`;
+  const encryptionKey = address!;
 
   useEffect(() => {
-    if (wallets.length > 0) {
-      localStorage.setItem(storageKey, JSON.stringify(wallets));
+    if (isConnected && address) {
+      const savedWallets = localStorage.getItem(storageKey(address));
+      if (savedWallets) {
+        try {
+          const decryptedWallets = CryptoJS.AES.decrypt(
+            savedWallets,
+            encryptionKey
+          ).toString(CryptoJS.enc.Utf8);
+          const parsedWallets = JSON.parse(decryptedWallets);
+          if (parsedWallets && parsedWallets.length > 0) {
+            setWallets(parsedWallets);
+          } else {
+            setWallets([]);
+          }
+        } catch (error) {
+          console.error("Failed to decrypt wallets:", error);
+          setWallets([]);
+        }
+      } else {
+        setWallets([]);
+      }
+    } else {
+      setWallets([]);
     }
-  }, [wallets, storageKey]);
+  }, [isConnected, address, setWallets, encryptionKey]);
+
+  useEffect(() => {
+    if (wallets.length > 0 && address) {
+      const encryptedWallets = CryptoJS.AES.encrypt(
+        JSON.stringify(wallets),
+        encryptionKey
+      ).toString();
+      localStorage.setItem(storageKey(address), encryptedWallets);
+    }
+  }, [wallets, address, encryptionKey]);
 
   const clearWallets = () => {
-    localStorage.removeItem(storageKey);
-    setWallets([]);
+    if (address) {
+      localStorage.removeItem(storageKey(address));
+      setWallets([]);
+    }
   };
 
   const removeWalletByIndex = (index: number) => {

@@ -18,9 +18,16 @@ import { Context } from "lib/context";
 
 import { useWalletStorage } from "hooks/useWalletStorage";
 
+import { useAccount } from "wagmi";
+
 export default function WalletsSection() {
   const { wallets } = Context();
+  const { isConnected } = useAccount();
   const { clearWallets, removeWalletByIndex } = useWalletStorage();
+
+  if (!isConnected) {
+    return <p>Please connect your wallet to view the stored wallets.</p>;
+  }
 
   return (
     <Card className="h-auto ">

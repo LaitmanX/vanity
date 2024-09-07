@@ -28,3 +28,7 @@
 .custom-text-shadow {
   text-shadow: 0px 0px 10px #f00;
 }
+
+.web3modal-custom-text {
+  color: #000000; /* Change this to your desired text color */
+}

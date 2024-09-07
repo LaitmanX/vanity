@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Icons } from "components/ui/icons";
+import { ConnectWalletButton } from "./ui/connect-button";
 
 export default function SubHeader() {
   return (
@@ -7,14 +8,19 @@ export default function SubHeader() {
       <h1 className="text-oranges text-2xl font-semibold leading-normal custom-text-shadow">
         VANITY.AC
       </h1>
-      <span className="text-gray-600 text-xs">ALPHA v0.1.0</span>
-      <nav className="flex items-center space-x-5">
+      <div className="flex items-center space-x-2">
         <Link
           href="https://github.com/LaitmanX/vanity"
           className="text-oranges"
         >
           <Icons.github />
         </Link>
+
+        <span className="text-gray-600 text-xs">BETA v0.2.0</span>
+      </div>
+
+      <nav className="flex items-center space-x-5">
+        <ConnectWalletButton />
       </nav>
     </header>
   );

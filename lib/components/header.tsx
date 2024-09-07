@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="flex flex-col text-center text-oranges">
+    <header className="flex flex-col text-center text-oranges bg-black">
       <h1 className="text-3xl">THE FASTEST VANITY ADDRESS GENERATOR</h1>
       <p className="text-xl text-foreground">
         Unleash Style. Generate sleek vanity addresses with a modern twist and
@@ -28,6 +28,7 @@ export default function Header() {
           alt="Dog animation demonstrating happiness"
           width={150}
           height={150}
+          unoptimized={true}
         />
       </div>
     </header>

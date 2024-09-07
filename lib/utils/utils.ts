@@ -23,3 +23,11 @@ export function computeProbability(
 ): number {
   return 1 - Math.pow(1 - 1 / difficulty, attempts);
 }
+
+export const middleEllipsis = (str: string, len: number) => {
+  if (!str) {
+    return "";
+  }
+
+  return `${str.substr(0, len)}...${str.substr(str.length - len, str.length)}`;
+};
